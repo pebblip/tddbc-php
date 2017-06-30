@@ -1,28 +1,28 @@
-# TDDB PHP環境
+# TDDBC PHPUnit 環境
 
-# 動作環境
+## 動作環境
 
 * PHP 5.6 以上
 
-# セットアップ
+## セットアップ
 
-## PHPのインストール
+### PHPのインストール
 * インストールされていない場合は、[XAMP](https://www.apachefriends.org/jp/index.html) が簡単。
 
-## composer のインストール
+### composer のインストール
 * Windowsの場合は、[インストーラ](https://getcomposer.org/download/)が簡単。
 
-## composer の実行
+### composer の実行
 
-```php
-composer install
+```
+$ composer install
 ```
 
-## サンプルテストの確認
+### サンプルテストの確認
 PHPUnitを実行する。
 
 ```
- vendor/bin/phpunit
+$ vendor/bin/phpunit
 ```
 
 こんな感じで出たらOK。
