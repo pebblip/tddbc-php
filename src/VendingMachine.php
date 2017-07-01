@@ -9,7 +9,7 @@
 namespace tddbc\php;
 
 
-class VendingMachine
+class  VendingMachine
 {
 	private $total = 0;
 	private $turisen = 0;
@@ -28,7 +28,7 @@ class VendingMachine
 
 	public function insert($int)
 	{
-		if ($int == 1) {
+		if (!$this->isValidMoney($int)){
 			return;
 		}
 
@@ -44,5 +44,9 @@ class VendingMachine
 	{
 		$this->turisen = $this->total();
 		$this->total = 0;
+	}
+
+	private function isValidMoney($money) {
+		return array_search($money, [10, 50, 100, 500, 1000]) !== false;
 	}
 }
