@@ -39,5 +39,6 @@ class VendingMachine
 	public function refund()
 	{
 		$this->turisen = $this->total();
+		$this->total = 0;
 	}
 }

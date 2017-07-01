@@ -62,4 +62,15 @@ class VendingMachineTest extends \PHPUnit_Framework_TestCase
 		$sut->refund();
 		self::assertSame(1000, $sut->change());
 	}
+
+	/**
+	 * @test
+	 */
+	public function ５００円入れてから払い戻しをすると総額が0になる()
+	{
+		$sut = new VendingMachine();
+		$sut->insert(500);
+		$sut->refund();
+		self::assertSame(0, $sut->total());
+	}
 }
