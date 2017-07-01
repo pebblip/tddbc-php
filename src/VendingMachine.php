@@ -28,6 +28,6 @@ class VendingMachine
 
 	public function insert($int)
 	{
-		$this->total = $int;
+		$this->total += $int;
 	}
 }
