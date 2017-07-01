@@ -12,7 +12,7 @@ namespace tddbc\php;
 class VendingMachine
 {
 	private $total = 0;
-
+	private $turisen = 0;
 
 	/**
 	 * VendingMachine constructor.
@@ -29,5 +29,15 @@ class VendingMachine
 	public function insert($int)
 	{
 		$this->total += $int;
+	}
+
+	public function change()
+	{
+		return $this->turisen;
+	}
+
+	public function refund()
+	{
+		$this->turisen = $this->total();
 	}
 }

@@ -12,6 +12,7 @@ class SampleTest extends TestCase
 	public function sayHello()
 	{
 		$sut = new Sample();
+		$sut->hogehoge();
 		$this->assertEquals('hello', $sut->hello());
 	}
 }
