@@ -11,7 +11,7 @@ namespace tddbc\php;
 
 class VendingMachine
 {
-
+	private $total = 0;
 
 
 	/**
@@ -23,6 +23,11 @@ class VendingMachine
 
 	public function total()
 	{
-		return 0;
+		return $this->total;
+	}
+
+	public function insert($int)
+	{
+		$this->total = $int;
 	}
 }
