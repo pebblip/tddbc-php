@@ -18,7 +18,8 @@ class JuiceStockTest extends \PHPUnit_Framework_TestCase
 	public function 初期状態ではコーラが５本入ってる()
 	{
 		$sut = new JuiceStock();
-		self::assertSame(['コーラ', 5],$sut->getJuice());
+		$coke = new Juice('コーラ', 120);
+		self::assertEquals([$coke, 5],$sut->getJuice());
 	}
 
 	/**
@@ -26,9 +27,10 @@ class JuiceStockTest extends \PHPUnit_Framework_TestCase
 	 */
 	public function 初期状態ではコーラを増やせる()
 	{
+		$coke = new Juice('コーラ', 120);
+
 		$sut = new JuiceStock();
 		$sut->addJuice('コーラ');
-		self::assertSame(['コーラ', 6],$sut->getJuice());
+		self::assertEquals([$coke, 6],$sut->getJuice());
 	}
-
 }

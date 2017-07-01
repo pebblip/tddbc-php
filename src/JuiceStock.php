@@ -22,7 +22,8 @@ class JuiceStock
 
 	public function getJuice()
 	{
-		return ['コーラ', $this->quontity];
+		$coke = new Juice('コーラ', 120);
+		return [$coke, $this->quontity];
 	}
 
 	public function addJuice($string)
