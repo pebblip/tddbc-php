@@ -11,6 +11,11 @@ namespace tddbc\php;
 
 class JuiceStockTest extends \PHPUnit_Framework_TestCase
 {
+	private $coke;
+
+	public function setUp() {
+		$this->coke = new Juice('コーラ', 120);
+	}
 
 	/**
 	 * @test
@@ -18,8 +23,7 @@ class JuiceStockTest extends \PHPUnit_Framework_TestCase
 	public function 初期状態ではコーラが５本入ってる()
 	{
 		$sut = new JuiceStock();
-		$coke = new Juice('コーラ', 120);
-		self::assertEquals([$coke, 5],$sut->getJuice());
+		self::assertEquals([$this->coke, 5],$sut->getJuice());
 	}
 
 	/**
@@ -30,7 +34,7 @@ class JuiceStockTest extends \PHPUnit_Framework_TestCase
 		$coke = new Juice('コーラ', 120);
 
 		$sut = new JuiceStock();
-		$sut->addJuice('コーラ');
-		self::assertEquals([$coke, 6],$sut->getJuice());
+		$sut->addJuice($coke);
+		self::assertEquals([$this->coke, 6],$sut->getJuice());
 	}
 }

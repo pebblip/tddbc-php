@@ -26,7 +26,7 @@ class JuiceStock
 		return [$coke, $this->quontity];
 	}
 
-	public function addJuice($string)
+	public function addJuice($juice)
 	{
 		$this->quontity = 6;
 	}
