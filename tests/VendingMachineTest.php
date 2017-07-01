@@ -100,4 +100,13 @@ class VendingMachineTest extends \PHPUnit_Framework_TestCase
 		$this->sut->insert(5);
 		self::assertSame(500, $this->sut->total());
 	}
+
+	/**
+	 * @test
+	 */
+	public function １円玉を入れると釣銭が１円となる。()
+	{
+		$this->sut->insert(1);
+		self::assertSame(1, $this->sut->change());
+	}
 }

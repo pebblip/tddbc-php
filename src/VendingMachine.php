@@ -26,13 +26,14 @@ class  VendingMachine
 		return $this->total;
 	}
 
-	public function insert($int)
+	public function insert($money)
 	{
-		if (!$this->isValidMoney($int)){
+		if (!$this->isValidMoney($money)){
+			$this->turisen = $money;
 			return;
 		}
 
-		$this->total += $int;
+		$this->total += $money;
 	}
 
 	public function change()
