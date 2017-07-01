@@ -25,8 +25,12 @@ class JuiceStock
 		return [Juice::coke(), $this->quontity];
 	}
 
-	public function addJuice($juice)
+	public function addJuice(Juice $juice)
 	{
-		$this->quontity = 6;
+		if ($juice != Juice::coke()) {
+			throw new \InvalidArgumentException();
+		}
+
+		$this->quontity++;
 	}
 }
