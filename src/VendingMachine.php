@@ -28,6 +28,10 @@ class VendingMachine
 
 	public function insert($int)
 	{
+		if ($int == 1) {
+			return;
+		}
+
 		$this->total += $int;
 	}
 
